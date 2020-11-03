@@ -9,6 +9,7 @@
 #include <sstream>
 
 using text::Word;
+using text::kwic;
 
 void testWordSimpleInput() {
 	std::istringstream input{ "simpleInput" };
@@ -114,6 +115,55 @@ void testWordGreaterEqual2() {
 	ASSERT_EQUAL(true, w1 >= w2);
 }
 
+void testKWICOneLineOneWord() {
+	std::istringstream input{ "a" };
+	std::ostringstream output{};
+	kwic(input, output);
+	ASSERT_EQUAL("a \n", output.str());
+}
+
+void testKWICOneLineTwoWord() {
+	std::istringstream input{ "a b" };
+	std::ostringstream output{};
+	kwic(input, output);
+	ASSERT_EQUAL("a b \nb a \n", output.str());
+}
+
+void testKWICTwoLineOneWord() {
+	std::istringstream input{ "a\nb" };
+	std::ostringstream output{};
+	kwic(input, output);
+	ASSERT_EQUAL("a \nb \n", output.str());
+}
+
+void testKWICTwoLineOneWordSort() {
+	std::istringstream input{ "b\na" };
+	std::ostringstream output{};
+	kwic(input, output);
+	ASSERT_EQUAL("a \nb \n", output.str());
+}
+
+void testKWICTwoLineTwoWord() {
+	std::istringstream input{ "a c\nb d" };
+	std::ostringstream output{};
+	kwic(input, output);
+	ASSERT_EQUAL("a c \nb d \nc a \nd b \n", output.str());
+}
+
+void testKWICTwoLineTwoWordSorted() {
+	std::istringstream input{ "a b\nc d" };
+	std::ostringstream output{};
+	kwic(input, output);
+	ASSERT_EQUAL("a b \nb a \nc d \nd c \n", output.str());
+}
+
+void testKWICTwoLineTwoWordComplex() {
+	std::istringstream input{ "ab bb\nca ba" };
+	std::ostringstream output{};
+	kwic(input, output);
+	ASSERT_EQUAL("ab bb \nba ca \nbb ab \nca ba \n", output.str());
+}
+
 bool runAllTests(int argc, char const* argv[]) {
 	cute::suite s{};
 	s.push_back(CUTE(testWordSimpleInput));
@@ -129,6 +179,13 @@ bool runAllTests(int argc, char const* argv[]) {
 	s.push_back(CUTE(testWordGreater));
 	s.push_back(CUTE(testWordGreaterEqual1));
 	s.push_back(CUTE(testWordGreaterEqual2));
+	s.push_back(CUTE(testKWICOneLineOneWord));
+	s.push_back(CUTE(testKWICOneLineTwoWord));
+	s.push_back(CUTE(testKWICTwoLineOneWord));
+	s.push_back(CUTE(testKWICTwoLineOneWordSort));
+	s.push_back(CUTE(testKWICTwoLineTwoWord));
+	s.push_back(CUTE(testKWICTwoLineTwoWordSorted));
+	s.push_back(CUTE(testKWICTwoLineTwoWordComplex));
 	cute::xml_file_opener xmlfile(argc, argv);
 	cute::xml_listener<cute::ide_listener<>> lis(xmlfile.out);
 	auto const runner = cute::makeRunner(lis, argc, argv);
