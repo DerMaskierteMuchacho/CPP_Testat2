@@ -217,6 +217,7 @@ bool runAllTests(int argc, char const* argv[]) {
 	s.push_back(CUTE(testWordGreater));
 	s.push_back(CUTE(testWordGreaterEqual1));
 	s.push_back(CUTE(testWordGreaterEqual2));
+	s.push_back(CUTE(testKWICEmpty));
 	s.push_back(CUTE(testKWICOneLineOneWord));
 	s.push_back(CUTE(testKWICOneLineTwoWord));
 	s.push_back(CUTE(testKWICTwoLineOneWord));
