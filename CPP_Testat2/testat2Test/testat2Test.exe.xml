@@ -1,5 +1,5 @@
 <testsuites>
-	<testsuite name="AllTests" tests="23">
+	<testsuite name="AllTests" tests="24">
 		<testcase classname="AllTests" name="testKwicSimple"/>
 		<testcase classname="AllTests" name="testKwicSampleTest"/>
 		<testcase classname="AllTests" name="testKwicSampleTest2"/>
@@ -16,6 +16,7 @@
 		<testcase classname="AllTests" name="testWordGreater"/>
 		<testcase classname="AllTests" name="testWordGreaterEqual1"/>
 		<testcase classname="AllTests" name="testWordGreaterEqual2"/>
+		<testcase classname="AllTests" name="testKWICEmpty"/>
 		<testcase classname="AllTests" name="testKWICOneLineOneWord"/>
 		<testcase classname="AllTests" name="testKWICOneLineTwoWord"/>
 		<testcase classname="AllTests" name="testKWICTwoLineOneWord"/>
