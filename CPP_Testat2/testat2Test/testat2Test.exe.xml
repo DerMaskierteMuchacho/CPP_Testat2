@@ -1,5 +1,8 @@
 <testsuites>
-	<testsuite name="AllTests" tests="13">
+	<testsuite name="AllTests" tests="16">
+		<testcase classname="AllTests" name="testKwicSimple"/>
+		<testcase classname="AllTests" name="testKwicSampleTest"/>
+		<testcase classname="AllTests" name="testKwicSampleTest2"/>
 		<testcase classname="AllTests" name="testWordSimpleInput"/>
 		<testcase classname="AllTests" name="testWordDefault"/>
 		<testcase classname="AllTests" name="testWordNoneInput"/>

@@ -10,6 +10,34 @@
 
 using text::Word;
 
+std::string testKwic(std::istream& input)
+{
+	std::ostringstream output{};
+	text::kwic(input, output);
+	return output.str();
+}
+
+void testKwicSimple()
+{
+	std::istringstream input{ "Test function you must" };
+	auto res = testKwic(input);
+	ASSERT_EQUAL("function you must Test \nmust Test function you \nTest function you must \nyou must Test function \n", res);
+}
+
+void testKwicSampleTest()
+{
+	std::istringstream input{ "this is a test" };
+	auto res = testKwic(input);
+	ASSERT_EQUAL("a test this is \nis a test this \ntest this is a \nthis is a test \n", res);
+}
+
+void testKwicSampleTest2()
+{
+	std::istringstream input{ "this is another test" };
+	auto res = testKwic(input);
+	ASSERT_EQUAL("another test this is \nis another test this \ntest this is another \nthis is another test \n", res);
+}
+
 void testWordSimpleInput() {
 	std::istringstream input{ "simpleInput" };
 	std::ostringstream output{};
@@ -116,6 +144,9 @@ void testWordGreaterEqual2() {
 
 bool runAllTests(int argc, char const* argv[]) {
 	cute::suite s{};
+	s.push_back(CUTE(testKwicSimple));
+	s.push_back(CUTE(testKwicSampleTest));
+	s.push_back(CUTE(testKwicSampleTest2));
 	s.push_back(CUTE(testWordSimpleInput));
 	s.push_back(CUTE(testWordDefault));
 	s.push_back(CUTE(testWordNoneInput));
