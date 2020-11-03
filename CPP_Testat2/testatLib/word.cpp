@@ -53,7 +53,8 @@ namespace text {
 			wordString += *inBegin;
 			inBegin++;
 		}
-		word.w = wordString;
+		Word checkWord{ wordString };
+		word = checkWord;
 		return is;
 	}
 	std::ostream& operator<<(std::ostream& os, Word const& word) {

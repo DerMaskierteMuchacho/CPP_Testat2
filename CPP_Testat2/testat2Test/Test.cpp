@@ -27,9 +27,12 @@ void testWordDefault() {
 }
 
 void testWordNoneInput() {
-	//TODO fix
-	//std::istringstream input{};
-	//ASSERT_THROWS(Word w{ input }, std::invalid_argument);
+	std::istringstream input{};
+	std::ostringstream output{};
+	Word w{};
+	output << w;
+	ASSERT_EQUAL((bool)input, true);
+	ASSERT_EQUAL("", output.str());
 }
 
 void testWordEmptyConstructor() {
