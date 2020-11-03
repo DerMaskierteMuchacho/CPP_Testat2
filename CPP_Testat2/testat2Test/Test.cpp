@@ -143,6 +143,13 @@ void testWordGreaterEqual2() {
 	ASSERT_EQUAL(true, w1 >= w2);
 }
 
+void testKWICEmpty() {
+	std::istringstream input{ "" };
+	std::ostringstream output{};
+	kwic(input, output);
+	ASSERT_EQUAL("", output.str());
+}
+
 void testKWICOneLineOneWord() {
 	std::istringstream input{ "a" };
 	std::ostringstream output{};
