@@ -1,4 +1,4 @@
-#include "word.hpp"
+#include "word.h"
 
 #include <cctype>
 #include <string>
@@ -42,11 +42,14 @@ namespace text {
 		std::istreambuf_iterator<char> inBegin{ is };
 		std::istreambuf_iterator<char> inEnd{};
 		std::string wordString{};
+		if (!is.good()) {
+			return is;
+		}
 		while (inBegin != inEnd && !isalpha(*inBegin)) {
 			inBegin++;
 		}
 		if (inBegin == inEnd) {
-			is.setstate(std::istream::failbit, true);
+			is.setstate(std::istream::failbit);
 			return is;
 		}
 		while (inBegin != inEnd && isalpha(*inBegin)) {

@@ -1,4 +1,4 @@
-#include "../testatLib/kwic.hpp"
+#include "../testatLib/kwic.h"
 #include <iostream>
 
 

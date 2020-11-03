@@ -1,5 +1,5 @@
-#ifndef WORD_HPP_
-#define WORD_HPP_
+#ifndef WORD_H_
+#define WORD_H_
 
 #include <string>
 #include <sstream>
@@ -23,10 +23,7 @@ namespace text {
 		//friend std::istringstream& operator>>(std::istringstream&, Word&);
 		friend std::istream& operator>>(std::istream&, Word&);
 		friend std::ostream& operator<<(std::ostream&, Word const&);
-		operator std::string() const { return w; };
-		//std::string ToString() { return w; };
-
 	};
 }
 
-#endif /* WORD_HPP_ */
+#endif /* WORD_H_ */

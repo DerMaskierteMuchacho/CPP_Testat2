@@ -1,5 +1,5 @@
-#include "../testatLib/word.hpp"
-#include "../testatLib/kwic.hpp"
+#include "../testatLib/word.h"
+#include "../testatLib/kwic.h"
 
 #include "cute/cute.h"
 #include "cute/ide_listener.h"
@@ -10,34 +10,6 @@
 
 using text::Word;
 using text::kwic;
-
-std::string testKwic(std::istream& input)
-{
-	std::ostringstream output{};
-	text::kwic(input, output);
-	return output.str();
-}
-
-void testKwicSimple()
-{
-	std::istringstream input{ "Test function you must" };
-	auto res = testKwic(input);
-	ASSERT_EQUAL("function you must Test \nmust Test function you \nTest function you must \nyou must Test function \n", res);
-}
-
-void testKwicSampleTest()
-{
-	std::istringstream input{ "this is a test" };
-	auto res = testKwic(input);
-	ASSERT_EQUAL("a test this is \nis a test this \ntest this is a \nthis is a test \n", res);
-}
-
-void testKwicSampleTest2()
-{
-	std::istringstream input{ "this is another test" };
-	auto res = testKwic(input);
-	ASSERT_EQUAL("another test this is \nis another test this \ntest this is another \nthis is another test \n", res);
-}
 
 void testWordSimpleInput() {
 	std::istringstream input{ "simpleInput" };
@@ -143,6 +115,16 @@ void testWordGreaterEqual2() {
 	ASSERT_EQUAL(true, w1 >= w2);
 }
 
+void testWordFailStateInput() {
+	std::istringstream input{ "correct" };
+	std::ostringstream output{};
+	input.setstate(std::istream::failbit);
+	Word w{ "wrong" };
+	input >> w;
+	output << w;
+	ASSERT_EQUAL("wrong", output.str());
+}
+
 void testKWICEmpty() {
 	std::istringstream input{ "" };
 	std::ostringstream output{};
@@ -199,11 +181,36 @@ void testKWICTwoLineTwoWordComplex() {
 	ASSERT_EQUAL("ab bb \nba ca \nbb ab \nca ba \n", output.str());
 }
 
+std::string testKwic(std::istream& input)
+{
+	std::ostringstream output{};
+	kwic(input, output);
+	return output.str();
+}
+
+void testKwicSimple()
+{
+	std::istringstream input{ "Test function you must" };
+	auto res = testKwic(input);
+	ASSERT_EQUAL("function you must Test \nmust Test function you \nTest function you must \nyou must Test function \n", res);
+}
+
+void testKwicSampleTest()
+{
+	std::istringstream input{ "this is a test" };
+	auto res = testKwic(input);
+	ASSERT_EQUAL("a test this is \nis a test this \ntest this is a \nthis is a test \n", res);
+}
+
+void testKwicSampleTest2()
+{
+	std::istringstream input{ "this is another test" };
+	auto res = testKwic(input);
+	ASSERT_EQUAL("another test this is \nis another test this \ntest this is another \nthis is another test \n", res);
+}
+
 bool runAllTests(int argc, char const* argv[]) {
 	cute::suite s{};
-	s.push_back(CUTE(testKwicSimple));
-	s.push_back(CUTE(testKwicSampleTest));
-	s.push_back(CUTE(testKwicSampleTest2));
 	s.push_back(CUTE(testWordSimpleInput));
 	s.push_back(CUTE(testWordDefault));
 	s.push_back(CUTE(testWordNoneInput));
@@ -217,6 +224,7 @@ bool runAllTests(int argc, char const* argv[]) {
 	s.push_back(CUTE(testWordGreater));
 	s.push_back(CUTE(testWordGreaterEqual1));
 	s.push_back(CUTE(testWordGreaterEqual2));
+	s.push_back(CUTE(testWordFailStateInput));
 	s.push_back(CUTE(testKWICEmpty));
 	s.push_back(CUTE(testKWICOneLineOneWord));
 	s.push_back(CUTE(testKWICOneLineTwoWord));
@@ -225,6 +233,9 @@ bool runAllTests(int argc, char const* argv[]) {
 	s.push_back(CUTE(testKWICTwoLineTwoWord));
 	s.push_back(CUTE(testKWICTwoLineTwoWordSorted));
 	s.push_back(CUTE(testKWICTwoLineTwoWordComplex));
+	s.push_back(CUTE(testKwicSimple));
+	s.push_back(CUTE(testKwicSampleTest));
+	s.push_back(CUTE(testKwicSampleTest2));
 	cute::xml_file_opener xmlfile(argc, argv);
 	cute::xml_listener<cute::ide_listener<>> lis(xmlfile.out);
 	auto const runner = cute::makeRunner(lis, argc, argv);
