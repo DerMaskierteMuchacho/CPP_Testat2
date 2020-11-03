@@ -1,0 +1,17 @@
+<testsuites>
+	<testsuite name="AllTests" tests="13">
+		<testcase classname="AllTests" name="testWordSimpleInput"/>
+		<testcase classname="AllTests" name="testWordDefault"/>
+		<testcase classname="AllTests" name="testWordNoneInput"/>
+		<testcase classname="AllTests" name="testWordEmptyConstructor"/>
+		<testcase classname="AllTests" name="testWordComplexInput"/>
+		<testcase classname="AllTests" name="testWordEqual"/>
+		<testcase classname="AllTests" name="testWordNotEqual"/>
+		<testcase classname="AllTests" name="testWordLower"/>
+		<testcase classname="AllTests" name="testWordLowerEqual1"/>
+		<testcase classname="AllTests" name="testWordLowerEqual2"/>
+		<testcase classname="AllTests" name="testWordGreater"/>
+		<testcase classname="AllTests" name="testWordGreaterEqual1"/>
+		<testcase classname="AllTests" name="testWordGreaterEqual2"/>
+	</testsuite>
+</testsuites>
