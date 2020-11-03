@@ -2,8 +2,10 @@
 #define KWIC_HPP_
 
 #include <string>
-#include <istream>
+#include <iosfwd>
+namespace text {
+	void kwic(std::istream &, std::ostream &);
+}
 
-std::string kwic(std::istream);
 
 #endif /* KWIC_HPP_ */

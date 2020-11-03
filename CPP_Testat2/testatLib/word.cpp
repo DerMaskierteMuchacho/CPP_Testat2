@@ -18,13 +18,11 @@ bool text::Word::isIllegalString(std::string const valueStr) const {
 }
 bool text::Word::operator==(Word const& rhs) const {
 	return std::equal(w.begin(), w.end(), rhs.w.begin(), rhs.w.end(), [](char c1, char c2) {
-			return std::tolower(c1) == std::tolower(c2); 
-			});
+		return std::tolower(c1) == std::tolower(c2);		});
 }
 bool text::Word::operator<(Word const& rhs) const {
 	return std::lexicographical_compare(w.begin(), w.end(), rhs.w.begin(), rhs.w.end(), [](char c1, char c2) {
-		return std::tolower(c1) < std::tolower(c2); 
-		});
+		return std::tolower(c1) < std::tolower(c2);		});
 }
 bool text::Word::operator!=(Word const& rhs) const {
 	return !(*this == rhs);
@@ -58,27 +56,8 @@ namespace text {
 		word.w = wordString;
 		return is;
 	}
-	/*std::istringstream& operator>>(std::istringstream& is, Word& word) {
-		std::istreambuf_iterator<char> inBegin{ is };
-		std::istreambuf_iterator<char> inEnd{};
-		std::string wordString{};
-		while (inBegin != inEnd && !isalpha(*inBegin)) {
-			inBegin++;
-		}
-		if (inBegin == inEnd) {
-			is.setstate(std::istream::failbit, true);
-			return is;
-		}
-		while (inBegin != inEnd && isalpha(*inBegin)) {
-			wordString += *inBegin;
-			inBegin++;
-		}
-		word.w = wordString;
-		return is;
-	}*/
 	std::ostream& operator<<(std::ostream& os, Word const& word) {
 		os << word.w;
 		return os;
 	}
 }
-

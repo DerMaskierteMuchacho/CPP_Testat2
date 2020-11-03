@@ -1,6 +1,7 @@
 #include "../testatLib/kwic.hpp"
 #include <iostream>
 
+
 int main(int argc, char* argv[]) {
-	std::cout << "project test";
+	text::kwic(std::cin, std::cout);
 }
