@@ -20,40 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="kwic.cpp" />
-    <ClCompile Include="Test.cpp" />
     <ClCompile Include="word.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="cute\cute.h" />
-    <ClInclude Include="cute\cute_base.h" />
-    <ClInclude Include="cute\cute_counting_listener.h" />
-    <ClInclude Include="cute\cute_data_driven.h" />
-    <ClInclude Include="cute\cute_demangle.h" />
-    <ClInclude Include="cute\cute_deprecated.h" />
-    <ClInclude Include="cute\cute_determine_library.h" />
-    <ClInclude Include="cute\cute_determine_traits.h" />
-    <ClInclude Include="cute\cute_determine_version.h" />
-    <ClInclude Include="cute\cute_diff_values.h" />
-    <ClInclude Include="cute\cute_equals.h" />
-    <ClInclude Include="cute\cute_integer_sequence.h" />
-    <ClInclude Include="cute\cute_listener.h" />
-    <ClInclude Include="cute\cute_range.h" />
-    <ClInclude Include="cute\cute_relops.h" />
-    <ClInclude Include="cute\cute_repeated_test.h" />
-    <ClInclude Include="cute\cute_runner.h" />
-    <ClInclude Include="cute\cute_suite.h" />
-    <ClInclude Include="cute\cute_suite_test.h" />
-    <ClInclude Include="cute\cute_test.h" />
-    <ClInclude Include="cute\cute_testmember.h" />
-    <ClInclude Include="cute\cute_test_incarnate.h" />
-    <ClInclude Include="cute\cute_throws.h" />
-    <ClInclude Include="cute\cute_to_string.h" />
-    <ClInclude Include="cute\cute_version.h" />
-    <ClInclude Include="cute\cute_xml_file.h" />
-    <ClInclude Include="cute\ide_listener.h" />
-    <ClInclude Include="cute\ostream_listener.h" />
-    <ClInclude Include="cute\tap_listener.h" />
-    <ClInclude Include="cute\xml_listener.h" />
     <ClInclude Include="kwic.hpp" />
     <ClInclude Include="word.hpp" />
   </ItemGroup>

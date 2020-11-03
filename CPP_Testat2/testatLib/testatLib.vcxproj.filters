@@ -21,105 +21,12 @@
     <ClCompile Include="word.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="Test.cpp">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="kwic.hpp">
       <Filter>Headerdateien</Filter>
     </ClInclude>
     <ClInclude Include="word.hpp">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_base.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_counting_listener.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_data_driven.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_demangle.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_deprecated.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_determine_library.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_determine_traits.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_determine_version.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_diff_values.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_equals.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_integer_sequence.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_listener.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_range.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_relops.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_repeated_test.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_runner.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_suite.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_suite_test.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_test.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_test_incarnate.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_testmember.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_throws.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_to_string.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_version.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\cute_xml_file.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\ide_listener.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\ostream_listener.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\tap_listener.h">
-      <Filter>Headerdateien</Filter>
-    </ClInclude>
-    <ClInclude Include="cute\xml_listener.h">
       <Filter>Headerdateien</Filter>
     </ClInclude>
   </ItemGroup>
